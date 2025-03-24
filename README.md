@@ -41,3 +41,36 @@ This project is my personal learning lab for mastering **mobile development** wh
 
 ## 🗂️ Folder Structure (simplified)
 
+learnMobile/
+├─ app/
+│  ├─ (tabs)/
+│  │  ├─ _layout.tsx
+│  │  ├─ index.tsx
+│  │  └─ settings.tsx
+│  └─ _layout.tsx
+├─ assets/
+│  └─ images/
+│     ├─ favicon.png
+│     └─ icon.png
+├─ components/
+├─ constants/
+│  ├─ color.ts
+│  └─ theme.ts
+├─ contexts/
+│  ├─ api/
+│  │  ├─ color.tsx
+│  │  ├─ imgFlip.tsx
+│  │  ├─ movie.tsx
+│  │  ├─ trivia.tsx
+│  │  └─ weather.tsx
+│  └─ themeContext.tsx
+├─ hooks/
+│  └─ useFrameworkReady.ts
+├─ .gitignore
+├─ .prettierrc
+├─ app.json
+├─ expo-env.d.ts
+├─ package-lock.json
+├─ package.json
+├─ README.md
+└─ tsconfig.json
