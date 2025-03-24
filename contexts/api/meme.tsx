@@ -17,7 +17,7 @@ export interface Meme {
   page_url: string;
 }
 
-export interface ImgFlipState {
+export interface MemeState {
   templates: MemeTemplate[];
   trendingMemes: Meme[];
   generatedMeme: Meme | null;
@@ -28,7 +28,7 @@ export interface ImgFlipState {
   generateMeme: (templateId: string, captions: string[]) => Promise<void>;
 }
 
-export const useImgFlipStore = create<ImgFlipState>((set) => ({
+export const useImgFlipStore = create<MemeState>((set) => ({
   templates: [],
   trendingMemes: [],
   generatedMeme: null,
