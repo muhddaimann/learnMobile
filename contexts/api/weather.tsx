@@ -30,15 +30,33 @@ export interface WeatherData {
   };
 }
 
+export interface ForecastDataPoint {
+  date: string;
+  day: {
+    maxtemp_c: number;
+    mintemp_c: number;
+    avgtemp_c: number;
+  };
+}
+
+export interface ForecastResponse {
+  forecast: {
+    forecastday: ForecastDataPoint[];
+  };
+}
+
 interface WeatherState {
   weather: WeatherData | null;
+  forecast: ForecastDataPoint[];
   loading: boolean;
   error: string | null;
   fetchWeather: (city: string) => Promise<void>;
+  fetchForecast: (city: string) => Promise<void>;
 }
 
 export const useWeatherStore = create<WeatherState>((set) => ({
   weather: null,
+  forecast: [],
   loading: false,
   error: null,
 
@@ -57,6 +75,26 @@ export const useWeatherStore = create<WeatherState>((set) => ({
       set({ weather: response.data, loading: false });
     } catch (err) {
       set({ error: 'Failed to fetch weather data', loading: false });
+    }
+  },
+
+  fetchForecast: async (city: string) => {
+    set({ loading: true, error: null });
+
+    try {
+      const response = await axios.get(`${BASE_URL}/forecast.json`, {
+        params: {
+          key: API_KEY,
+          q: city,
+          days: 3,
+          aqi: 'no',
+        },
+      });
+
+      const forecast = response.data.forecast.forecastday;
+      set({ forecast, loading: false });
+    } catch (err) {
+      set({ error: 'Failed to fetch forecast data', loading: false });
     }
   },
 }));

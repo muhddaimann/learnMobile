@@ -41,36 +41,45 @@ This project is my personal learning lab for mastering **mobile development** wh
 
 ## 🗂️ Folder Structure (simplified)
 
+
 learnMobile/
 ├─ app/
 │  ├─ (tabs)/
+│  │  ├─ color/
+│  │  │  ├─ _layout.tsx
+│  │  │  └─ index.tsx
+│  │  ├─ meme/
+│  │  │  ├─ _layout.tsx
+│  │  │  └─ index.tsx
+│  │  ├─ movie/
+│  │  │  ├─ _layout.tsx
+│  │  │  └─ index.tsx
+│  │  ├─ trivia/
+│  │  │  ├─ _layout.tsx
+│  │  │  └─ index.tsx
+│  │  ├─ weather/
+│  │  │  ├─ _layout.tsx
+│  │  │  └─ index.tsx
 │  │  ├─ _layout.tsx
 │  │  ├─ index.tsx
 │  │  └─ settings.tsx
 │  └─ _layout.tsx
 ├─ assets/
 │  └─ images/
-│     ├─ favicon.png
-│     └─ icon.png
 ├─ components/
+│  └─ triviaFilter.tsx
 ├─ constants/
 │  ├─ color.ts
 │  └─ theme.ts
 ├─ contexts/
 │  ├─ api/
 │  │  ├─ color.tsx
-│  │  ├─ imgFlip.tsx
+│  │  ├─ meme.tsx
 │  │  ├─ movie.tsx
 │  │  ├─ trivia.tsx
 │  │  └─ weather.tsx
 │  └─ themeContext.tsx
 ├─ hooks/
-│  └─ useFrameworkReady.ts
-├─ .gitignore
-├─ .prettierrc
-├─ app.json
-├─ expo-env.d.ts
-├─ package-lock.json
-├─ package.json
-├─ README.md
-└─ tsconfig.json
+│  ├─ useFrameworkReady.ts
+│  ├─ useGreeting.ts
+│  └─ useTrivia.ts
